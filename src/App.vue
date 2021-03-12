@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="bg-black">
-    <Nav class="mb-6 bg-back w-full fixed"/>
-    <GameList msg="Games List" class="text-center min-h-screen"/>
+    <Nav class="bg-back w-full fixed top-0"/>
+    <Game-List msg="Games List" class="text-center min-h-screen pt-16 xl:pt-20"/>
   </div>
 </template>
 

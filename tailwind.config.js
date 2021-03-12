@@ -10,6 +10,8 @@ module.exports = {
         '50': "50px",
       },
       width: {
+        '350': 350,
+        '250': 250,
       },
       height: {
         'logomobile': 50,

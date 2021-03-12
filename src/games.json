@@ -1,0 +1,230 @@
+[
+    {
+      "contentRating": 2,
+      "numberOfPlayer": 1,
+      "controller": [
+        "controller1",
+        "controller2"
+      ],
+      "image": "images/example/2.png",
+      "videos": [
+        "video1",
+        "video2"
+      ],
+      "scores": [
+        
+      ],
+      "reviews": [
+        "review1",
+        "review2"
+      ],
+      "_id": "6048fd6b76017c15dc89c89d",
+      "title": "Yoga - 1",
+      "description": "Game description - 1",
+      "releaseDate": "2021-03-10T17:10:02.290Z",
+      "size": "100",
+      "platform": "Desktop",
+      "author": "Someone",
+      "source": "Some link",
+      "downloads": 100,
+      "playtime": 30,
+      "loves": 5,
+      "likes": 10,
+      "dislikes": 4,
+      "genre": {
+        "_id": "6048fd6b76017c15dc89c89c",
+        "name": "Yoga",
+        "type": "fitness"
+      }
+    },
+    {
+      "contentRating": 2,
+      "numberOfPlayer": 1,
+      "controller": [
+        "controller1",
+        "controller2"
+      ],
+      "image": "images/example/3.png",
+      "videos": [
+        "video1",
+        "video2"
+      ],
+      "scores": [
+        
+      ],
+      "reviews": [
+        "review1",
+        "review2"
+      ],
+      "_id": "6048fd6b76017c15dc89c89e",
+      "title": "Yoga - 2",
+      "description": "Game description - 2",
+      "releaseDate": "2021-03-10T17:10:02.291Z",
+      "size": "100",
+      "platform": "Desktop",
+      "author": "Someone",
+      "source": "Some link",
+      "downloads": 100,
+      "playtime": 30,
+      "loves": 5,
+      "likes": 10,
+      "dislikes": 4,
+      "genre": {
+        "_id": "6048fd6b76017c15dc89c89c",
+        "name": "Yoga",
+        "type": "fitness"
+      }
+    },
+    {
+      "contentRating": 2,
+      "numberOfPlayer": 1,
+      "controller": [
+        "controller1",
+        "controller2"
+      ],
+      "image": "images/example/4.png",
+      "videos": [
+        "video1",
+        "video2"
+      ],
+      "scores": [
+        
+      ],
+      "reviews": [
+        "review1",
+        "review2"
+      ],
+      "_id": "6048fd6b76017c15dc89c89f",
+      "title": "Yoga - 3",
+      "description": "Game description - 3",
+      "releaseDate": "2021-03-10T17:10:02.291Z",
+      "size": "100",
+      "platform": "Desktop",
+      "author": "Someone",
+      "source": "Some link",
+      "downloads": 100,
+      "playtime": 30,
+      "loves": 5,
+      "likes": 10,
+      "dislikes": 4,
+      "genre": {
+        "_id": "6048fd6b76017c15dc89c89c",
+        "name": "Yoga",
+        "type": "fitness"
+      }
+    },
+    {
+      "contentRating": 2,
+      "numberOfPlayer": 1,
+      "controller": [
+        "controller1",
+        "controller2"
+      ],
+      "image": "images/example/5.png",
+      "videos": [
+        "video1",
+        "video2"
+      ],
+      "scores": [
+        
+      ],
+      "reviews": [
+        "review1",
+        "review2"
+      ],
+      "_id": "6048fd6b76017c15dc89c8a1",
+      "title": "slimming - 1",
+      "description": "Game description - slimming1",
+      "releaseDate": "2021-03-10T17:10:02.291Z",
+      "size": "100",
+      "platform": "Desktop",
+      "author": "Someone",
+      "source": "Some link",
+      "downloads": 100,
+      "playtime": 30,
+      "loves": 5,
+      "likes": 10,
+      "dislikes": 4,
+      "genre": {
+        "_id": "6048fd6b76017c15dc89c8a0",
+        "name": "Slimming",
+        "type": "fitness"
+      }
+    },
+    {
+      "contentRating": 2,
+      "numberOfPlayer": 1,
+      "controller": [
+        "controller1",
+        "controller2"
+      ],
+      "image": "images/example/6.png",
+      "videos": [
+        "video1",
+        "video2"
+      ],
+      "scores": [
+        
+      ],
+      "reviews": [
+        "review1",
+        "review2"
+      ],
+      "_id": "6048fd6b76017c15dc89c8a3",
+      "title": "park - 1",
+      "description": "Game description - park1",
+      "releaseDate": "2021-03-10T17:10:02.291Z",
+      "size": "100",
+      "platform": "Desktop",
+      "author": "Someone",
+      "source": "Some link",
+      "downloads": 100,
+      "playtime": 30,
+      "loves": 5,
+      "likes": 10,
+      "dislikes": 4,
+      "genre": {
+        "_id": "6048fd6b76017c15dc89c8a2",
+        "name": "park",
+        "type": "social"
+      }
+    },
+    {
+      "contentRating": 2,
+      "numberOfPlayer": 1,
+      "controller": [
+        "controller1",
+        "controller2"
+      ],
+      "image": "images/example/2.png",
+      "videos": [
+        "video1",
+        "video2"
+      ],
+      "scores": [
+        
+      ],
+      "reviews": [
+        "review1",
+        "review2"
+      ],
+      "_id": "6048fd6b76017c15dc89c8a5",
+      "title": "battle-tank",
+      "description": "Game description - battle tank",
+      "releaseDate": "2021-03-10T17:10:02.291Z",
+      "size": "100",
+      "platform": "Desktop",
+      "author": "Someone",
+      "source": "Some link",
+      "downloads": 100,
+      "playtime": 30,
+      "loves": 5,
+      "likes": 10,
+      "dislikes": 4,
+      "genre": {
+        "_id": "6048fd6b76017c15dc89c8a4",
+        "name": "battle tank",
+        "type": "game"
+      }
+    }
+  ]

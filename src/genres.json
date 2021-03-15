@@ -1,0 +1,22 @@
+[
+    {
+      "_id": "6048fd6b76017c15dc89c8a0",
+      "name": "Slimming",
+      "type": "fitness"
+    },
+    {
+      "_id": "6048fd6b76017c15dc89c89c",
+      "name": "Yoga",
+      "type": "fitness"
+    },
+    {
+      "_id": "6048fd6b76017c15dc89c8a4",
+      "name": "battle tank",
+      "type": "game"
+    },
+    {
+      "_id": "6048fd6b76017c15dc89c8a2",
+      "name": "park",
+      "type": "social"
+    }
+  ]

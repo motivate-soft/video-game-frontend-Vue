@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import GamelistContent from "./gamelist/content.vue"
-import GamelistFooter from "./gamelist/footer.vue"
+import GamelistContent from "./gamelist/Content.vue"
+import GamelistFooter from "./gamelist/Footer.vue"
 export default {
   name: 'HelloWorld',
   components: {

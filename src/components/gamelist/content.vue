@@ -2,7 +2,7 @@
   <div>
     <div class="w-full flex flex-end text-white text-left pr-6 m-auto" :style="'max-width: 1920px'">
       <div class="relative w-40 mt-12">
-        <sort-pan @filterByGenre="filterByGenre" />
+        <sort-pan @filterByGenre="filterByGenre" @filterByCategory="filterByCategory" :selected="selected" />
       </div>
       <div v-if="!isFiltered" class="flex flex-col py-12" :style="'max-width: 1600px'">
         <img :src="require('@/assets/images/example/1.png')" class="pb-12" />
@@ -10,8 +10,12 @@
         <game-sublist :subtitle="'新款崛起'" :items="newGames" />
         <game-sublist :subtitle="'好友热玩'" :items="hotGames" />
       </div>
-      <div v-if="isFiltered" class="w-full flex flex-col items-end py-12" :style="'max-width: 1600px'">
-        <game-filteredlist :items="filteredGames"/>
+      <div
+        v-if="isFiltered"
+        class="w-full flex flex-col items-end py-12"
+        :style="'max-width: 1600px'"
+      >
+        <game-filteredlist :items="filteredGames" />
         <span class="text-lg xl:text-xl pt-4 cursor-pointer" @click="showAll">查看全部</span>
       </div>
     </div>
@@ -22,7 +26,10 @@
 import GameSublist from "../gamelist/Sublist.vue";
 import GameFilteredlist from "../gamelist/Filteredlist.vue";
 import games from "../../games.json";
+import genres from "../../genres.json";
 import SortPan from "../gamelist/SortPan.vue";
+
+var categories = ['fitness', 'game', 'social'];
 export default {
   name: "GamelistContent",
   components: {
@@ -30,8 +37,12 @@ export default {
     GameFilteredlist,
     SortPan
   },
-  data: ()=>({
+  data: () => ({
     isFiltered: false,
+    selected: {
+      category: [],
+      genre: []
+    },
     games: games,
     filteredGames: [],
     topGames: [games[0], games[1], games[2], games[3]],
@@ -40,12 +51,44 @@ export default {
   }),
   methods: {
     showAll() {
-      this.isFiltered = false;
+      this.selected.category = [];
+      this.selected.genre = [];
     },
-    filterByGenre(genre_id) {
-      this.isFiltered=true;
-      this.filteredGames=games.filter(item => item.genre._id == genre_id);
-      console.log('filtered', this.filteredGames);
+    filterByGenre(gen, mode="") {
+      var genre = gen._id;
+      var category = gen.type;
+
+      var index = this.selected.genre.indexOf(genre);
+      if (index >= 0 || mode=="remove") this.selected.genre.splice(index, 1);
+      else this.selected.genre.push(genre);
+
+      index = this.selected.category.indexOf(category);
+      if (index >= 0) this.selected.category.splice(index, 1);
+    },
+    filterByCategory(category) {
+      genres.map( (item) => {
+        if(item.type==category) this.filterByGenre(item._id, "remove");
+      });
+      var index = this.selected.category.indexOf(category);
+      if (index >= 0) this.selected.category.splice(index, 1);
+      else this.selected.category.push(category);
+    }
+  },
+  watch: {
+    selected: {
+      deep: true,
+      handler() {
+        // console.log(this.selected);
+        if (this.selected.genre.length > 0 || this.selected.category.length > 0) {
+          this.isFiltered = true;
+          this.filteredGames = games.filter(item =>
+            this.selected.genre.includes(item.genre._id) || this.selected.category.includes(item.genre.type)
+          );
+          console.log("filtered", this.filteredGames);
+        } else {
+          this.isFiltered = false;
+        }
+      }
     }
   }
 };

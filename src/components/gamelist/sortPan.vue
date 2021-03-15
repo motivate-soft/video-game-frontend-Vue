@@ -21,15 +21,16 @@
         :key="category.category"
         class="w-full flex flex-col items-center"
       >
-        <div class="w-full flex justify-between items-center p-3 px-6 border-b border-gray-800">
+        <div class="w-full flex justify-between items-center p-3 px-6 border-b cursor-pointer border-gray-800" @click="filterByCategory(category.category)">
           <img :src="category.icon" class="w-8" />
-          <span class="text-xl" :style="'color:' + category.color">健身</span>
+          <span class="text-xl" :style="'color:' + categoryColor(category)">健身</span>
         </div>
         <span
-          class="p-2 px-6 text-xl cursor-pointer"
+          class="m-2 px-6 text-xl cursor-pointer w-full"
           v-for="genre in category.genres"
+          :style="getStyle(genre, category)"
           :key="genre._id"
-          @click="filter(genre._id)"
+          @click="filter(genre)"
         >{{ genre.name }}</span>
       </div>
     </div>
@@ -41,6 +42,9 @@ import genres from "../../genres.json";
 
 export default {
   name: "SortPan",
+  props: {
+    selected: Object
+  },
   data: () => ({
     collapse: true,
     categories: [
@@ -65,8 +69,19 @@ export default {
     ]
   }),
   methods: {
-    filter(genre_id) {
-      this.$emit("filterByGenre", genre_id);
+    filter(genre) {
+      this.$emit("filterByGenre", genre);
+    },
+    filterByCategory(category) {
+      this.$emit("filterByCategory", category);
+    },
+    categoryColor(category) {
+      if(this.selected.category.includes(category.category)) return category.color;
+      else return "#7E7E7E";
+    },
+    getStyle(genre, category) {
+      if(this.selected.genre.includes(genre._id)) return 'background: linear-gradient(to right, #181818, '+ category.color + ' , #181818)';
+      else return "";
     }
   }
 };

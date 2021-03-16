@@ -3,6 +3,8 @@ module.exports = {
     extend: {
       backgroundColor: {
         'back': "#181818",
+        'dark': "#121212",
+        'light': "#262626",
       },
       fontSize: {
         'huge': "130px",
@@ -12,6 +14,10 @@ module.exports = {
       width: {
         '350': 350,
         '250': 250,
+      },
+      maxWidth: {
+        '1600':1600,
+        '460': 460
       },
       height: {
         'logomobile': 50,

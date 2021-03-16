@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import genres from "../../genres.json";
+import genres from "../../constants/genres.json";
 
 export default {
   name: "SortPan",

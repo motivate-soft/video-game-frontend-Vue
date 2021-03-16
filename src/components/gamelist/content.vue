@@ -25,8 +25,8 @@
 <script>
 import GameSublist from "../gamelist/Sublist.vue";
 import GameFilteredlist from "../gamelist/Filteredlist.vue";
-import games from "../../games.json";
-import genres from "../../genres.json";
+import games from "../../constants/games.json";
+import genres from "../../constants/genres.json";
 import SortPan from "../gamelist/SortPan.vue";
 
 var categories = ['fitness', 'game', 'social'];

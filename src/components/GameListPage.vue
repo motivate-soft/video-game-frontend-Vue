@@ -1,5 +1,5 @@
 <template>
-  <div class="gamelist-content">
+  <div class="gamelist-content text-center min-h-screen pt-16 xl:pt-20 z-0">
     <Gamelist-Content class="w-full bg-back" />
     <Gamelist-Footer />
   </div>
@@ -9,7 +9,7 @@
 import GamelistContent from "./gamelist/Content.vue"
 import GamelistFooter from "./gamelist/Footer.vue"
 export default {
-  name: 'HelloWorld',
+  name: 'GameListPage',
   components: {
     GamelistContent,
     GamelistFooter

@@ -59,15 +59,17 @@ export default {
       var category = gen.type;
 
       var index = this.selected.genre.indexOf(genre);
-      if (index >= 0 || mode=="remove") this.selected.genre.splice(index, 1);
-      else this.selected.genre.push(genre);
+      if (index >= 0) this.selected.genre.splice(index, 1);
+      else if(mode=="") this.selected.genre.push(genre);
 
-      index = this.selected.category.indexOf(category);
-      if (index >= 0) this.selected.category.splice(index, 1);
+      if(mode==""){
+        index = this.selected.category.indexOf(category);
+        if (index >= 0) this.selected.category.splice(index, 1);
+      }
     },
     filterByCategory(category) {
       genres.map( (item) => {
-        if(item.type==category) this.filterByGenre(item._id, "remove");
+        if(item.type==category) this.filterByGenre(item, "remove");
       });
       var index = this.selected.category.indexOf(category);
       if (index >= 0) this.selected.category.splice(index, 1);

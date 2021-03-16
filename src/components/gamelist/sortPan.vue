@@ -6,9 +6,15 @@
         class="w-8 cursor-pointer"
         @click="collapse=!collapse"
       />
-      <img :src="require('@/assets/images/fitness.png')" class="w-8 my-3" />
-      <img :src="require('@/assets/images/game.png')" class="w-8 my-3" />
-      <img :src="require('@/assets/images/social.png')" class="w-8 my-3" />
+      <img
+        v-for="category in categories"
+        :key="category.category"
+        :src="category.icon"
+        class="w-8 my-3 cursor-pointer"
+        :style="getBorderStyle(category)"
+        @click="filterByCategory(category.category)"
+      />
+      
     </div>
     <div v-if="!collapse" class="flex flex-col items-end shadow-2xl mr-2 pb-10">
       <img
@@ -21,7 +27,10 @@
         :key="category.category"
         class="w-full flex flex-col items-center"
       >
-        <div class="w-full flex justify-between items-center p-3 px-6 border-b cursor-pointer border-gray-800" @click="filterByCategory(category.category)">
+        <div
+          class="w-full flex justify-between items-center p-3 px-6 border-b cursor-pointer border-gray-800"
+          @click="filterByCategory(category.category)"
+        >
           <img :src="category.icon" class="w-8" />
           <span class="text-xl" :style="'color:' + categoryColor(category)">健身</span>
         </div>
@@ -76,11 +85,22 @@ export default {
       this.$emit("filterByCategory", category);
     },
     categoryColor(category) {
-      if(this.selected.category.includes(category.category)) return category.color;
+      if (this.selected.category.includes(category.category))
+        return category.color;
       else return "#7E7E7E";
     },
     getStyle(genre, category) {
-      if(this.selected.genre.includes(genre._id)) return 'background: linear-gradient(to right, #181818, '+ category.color + ' , #181818)';
+      if (this.selected.genre.includes(genre._id))
+        return (
+          "background: linear-gradient(to right, #181818, " +
+          category.color +
+          " , #181818)"
+        );
+      else return "";
+    },
+    getBorderStyle(category) {
+      if (this.selected.category.includes(category.category))
+        return 'border-radius:20%; border: solid 1px ' + category.color;
       else return "";
     }
   }

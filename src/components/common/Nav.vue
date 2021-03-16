@@ -13,7 +13,7 @@
           </a>
       </div>
       <div class="relative">
-          <input class="rounded-full w-64 p-2 pl-10" :style="'border-width: 0; outline-width: 0'"/>
+          <input class="rounded-full w-64 p-2 pl-10 text-black" :style="'border-width: 0; outline-width: 0'"/>
           <div class="absolute flex items-center h-full" :style="'left:0; top:0'">
             <img :src="require('@/assets/images/nav/search.png')" class="p-2"/>
           </div>

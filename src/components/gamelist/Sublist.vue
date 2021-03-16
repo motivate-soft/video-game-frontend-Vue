@@ -11,6 +11,7 @@
         :image="item['image']"
         :genre="item['genre']"
         :playtime="item['playtime']"
+        :ID="item._id"
       />
     </div>
   </div>

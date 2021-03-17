@@ -1,5 +1,5 @@
 <template>
-  <div class="sticky" :style="'top:90px;'">
+  <div class="sticky px-3" :style="'top:90px;'">
     <div v-if="collapse" class="flex flex-col items-end mr-2 pb-10">
       <img
         :src="require('@/assets/images/menu.png')"
@@ -10,7 +10,7 @@
         v-for="category in categories"
         :key="category.category"
         :src="category.icon"
-        class="w-8 my-3 cursor-pointer"
+        class="w-7 p-1 mr-1 my-2 cursor-pointer"
         :style="getBorderStyle(category)"
         @click="filterByCategory(category.category)"
       />
@@ -31,7 +31,7 @@
           class="w-full flex justify-between items-center p-3 px-6 border-b cursor-pointer border-gray-800"
           @click="filterByCategory(category.category)"
         >
-          <img :src="category.icon" class="w-8" />
+          <img :src="category.icon" class="w-5 mr-1" />
           <span class="text-xl" :style="'color:' + categoryColor(category)">健身</span>
         </div>
         <span

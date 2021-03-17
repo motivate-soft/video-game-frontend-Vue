@@ -1,6 +1,6 @@
 <template>
   <router-link :to="'/games/' + ID">
-    <div class="flex flex-col w-250 xl:w-350 pr-4 pb-4">
+    <div class="flex flex-col min-w-250 xl:w-350 pr-8 pb-4">
       <img class="w-full" :src="require('@/assets/' + image)" />
       <div class="flex justify-between">
         <div class="flex items-center">

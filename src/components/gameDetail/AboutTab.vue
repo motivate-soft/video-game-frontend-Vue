@@ -21,7 +21,7 @@ export default {
     statistics() {
       return [
         { title: "创建时间", value: new Date(this.game.releaseDate).toLocaleDateString() },
-        { title: "更新时间", value: this.game.releaseDate },
+        { title: "更新时间", value: new Date(this.game.releaseDate).toLocaleDateString() },
         { title: "正在游戏", value: this.game.playtime },
         { title: "收藏人数", value: "collections" },
         { title: "主题内容", value: "冒险" },

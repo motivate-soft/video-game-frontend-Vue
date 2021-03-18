@@ -5,6 +5,7 @@ module.exports = {
         'back': "#181818",
         'dark': "#121212",
         'light': "#262626",
+        'semitransparent': "#00000088"
       },
       fontSize: {
         'huge': "130px",

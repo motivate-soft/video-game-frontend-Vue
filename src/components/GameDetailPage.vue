@@ -12,8 +12,8 @@
               {{ game.title}}
               <img :src="getGenreIcon(game.genre)" class="ml-8 w-6 h-6" />
             </span>
-            <a :href="game.source">
-              <img :src="require('@/assets/images/download.png')" class="w-8 lg:w-10 mr-6" />
+            <a :href="game.source" class="mr-6">
+              <img :src="require('@/assets/images/download.png')" class="w-8 lg:w-10" />
             </a>
           </div>
           <div class="flex justify-between pb-6 border-b border-gray-600">
@@ -59,15 +59,15 @@
           <div
             v-if="activetab === 1"
             class="tabcontent"
-          ><video-tab class="bg-dark px-12 py-6" :data="game"/></div>
+          ><video-tab class="bg-dark px-12 py-12" :game="game"/></div>
           <div
             v-if="activetab === 2"
             class="tabcontent"
-          ><guide-tab class="bg-dark px-12 py-6" :data="game"/></div>
+          ><guide-tab class="bg-dark px-12 py-6" :game="game"/></div>
           <div
             v-if="activetab === 3"
             class="tabcontent"
-          ><about-tab class="bg-dark px-12 py-6" :data="game"/></div>
+          ><about-tab class="bg-dark px-12 py-6" :game="game"/></div>
         </div>
       </div>
     </div>

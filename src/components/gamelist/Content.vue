@@ -28,7 +28,7 @@ import games from "../../constants/games.json";
 import genres from "../../constants/genres.json";
 import SortPan from "../gamelist/SortPan.vue";
 
-var categories = ['fitness', 'game', 'social'];
+// var categories = ['fitness', 'game', 'social'];
 export default {
   name: "GamelistContent",
   components: {

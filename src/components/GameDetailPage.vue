@@ -50,24 +50,30 @@
       </div>
       <div id="tabs">
         <div class="flex">
-          <a @click="activetab=1" :class="'text-2xl px-12 py-3 border-b-4 border-r cursor-pointer border-black bg-' + (activetab==1? 'dark': 'light')">视频</a>
-          <a @click="activetab=2" :class="'text-2xl px-12 py-3 border-b-4 border-r cursor-pointer border-black bg-' + (activetab==2? 'dark': 'light')">控制</a>
-          <a @click="activetab=3" :class="'text-2xl px-12 py-3 border-b-4 border-r cursor-pointer border-black bg-' + (activetab==3? 'dark': 'light')">关于</a>
+          <a
+            @click="activetab=1"
+            :class="'text-2xl px-12 py-3 border-b-4 border-r cursor-pointer border-black bg-' + (activetab==1? 'dark': 'light')"
+          >视频</a>
+          <a
+            @click="activetab=2"
+            :class="'text-2xl px-12 py-3 border-b-4 border-r cursor-pointer border-black bg-' + (activetab==2? 'dark': 'light')"
+          >控制</a>
+          <a
+            @click="activetab=3"
+            :class="'text-2xl px-12 py-3 border-b-4 border-r cursor-pointer border-black bg-' + (activetab==3? 'dark': 'light')"
+          >关于</a>
         </div>
 
         <div class="content">
-          <div
-            v-if="activetab === 1"
-            class="tabcontent"
-          ><video-tab class="bg-dark px-12 py-12" :game="game"/></div>
-          <div
-            v-if="activetab === 2"
-            class="tabcontent"
-          ><guide-tab class="bg-dark px-12 py-6" :game="game"/></div>
-          <div
-            v-if="activetab === 3"
-            class="tabcontent"
-          ><about-tab class="bg-dark px-12 py-6" :game="game"/></div>
+          <div v-if="activetab === 1" class="tabcontent">
+            <video-tab class="bg-dark px-12 py-12" :game="game" />
+          </div>
+          <div v-if="activetab === 2" class="tabcontent">
+            <guide-tab class="bg-dark px-12 py-6" :game="game" />
+          </div>
+          <div v-if="activetab === 3" class="tabcontent">
+            <about-tab class="bg-dark px-12 py-6" :game="game" />
+          </div>
         </div>
       </div>
     </div>
@@ -75,14 +81,16 @@
 </template>
 
 <script>
-import games from "../constants/games.json";
+// import games from "../constants/games.json";
 import VideoTab from "./gameDetail/VideoTab.vue";
 import GuideTab from "./gameDetail/GuideTab.vue";
 import AboutTab from "./gameDetail/AboutTab.vue";
+import gameApi from "@/api/gameApi";
 
 export default {
   name: "GameDetailPage",
   data: () => ({
+    // games: null,
     game: null,
     activetab: 1
   }),
@@ -110,9 +118,17 @@ export default {
     }
   },
   mounted() {
-    this.game = games.find(item => item._id == this.$route.params.id);
+    gameApi.get(
+      this.$route.params.id,
+      game => {
+        this.game = game;
+        console.log(game);
+      },
+      error => {
+        console.log("ERROR: ", error);
+      }
+    );
     // console.log(this.game);
-  },
-
+  }
 };
 </script>

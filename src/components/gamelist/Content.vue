@@ -48,6 +48,17 @@ export default {
     newGames: [games[2], games[3], games[4], games[1]],
     hotGames: [games[1], games[2], games[3], games[4], games[5]]
   }),
+  // mounted() {
+  //   gameApi.all(
+  //     games => {
+  //       this.games = games;
+  //       console.log(games);
+  //     },
+  //     error => {
+  //       console.log("ERROR: ", error);
+  //     }
+  //   );
+  // },
   methods: {
     showAll() {
       this.selected.category = [];

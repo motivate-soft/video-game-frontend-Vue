@@ -85,7 +85,7 @@
 import VideoTab from "./gameDetail/VideoTab.vue";
 import GuideTab from "./gameDetail/GuideTab.vue";
 import AboutTab from "./gameDetail/AboutTab.vue";
-import gameApi from "@/api/gameApi";
+import GameDataService from "@/services/GameService";
 
 export default {
   name: "GameDetailPage",
@@ -118,17 +118,9 @@ export default {
     }
   },
   mounted() {
-    gameApi.get(
-      this.$route.params.id,
-      game => {
-        this.game = game;
-        console.log(game);
-      },
-      error => {
-        console.log("ERROR: ", error);
-      }
+    GameDataService.get(this.$route.params.id).then(
+      response => this.game = response.data
     );
-    // console.log(this.game);
   }
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="'/games/' + ID">
+  <router-link :to="'/games/detail/' + '60540dfb1664323e1c56a1a1'">
     <div class="flex flex-col w-250 xl:w-350 pr-8 pb-4">
       <img class="w-full" :src="require('@/assets/' + image)" />
       <div class="flex justify-between">

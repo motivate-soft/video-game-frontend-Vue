@@ -2,10 +2,7 @@
   <div id="app" class="min-h-screen bg-back px-2 pt-16 xl:pt-20 z-0">
     <div v-if="game" class="mt-12 max-w-1600 m-auto">
       <div class="flex items-start w-full mb-16">
-        <img
-          :src="require('@/assets/' + game.image)"
-          class="w-460 object-scale-down h-auto pr-5 lg:pr-8"
-        />
+        <img :src="baseURL(game.image)" class="w-460 object-scale-down h-auto pr-5 lg:pr-8" />
         <div class="flex flex-col flex-grow">
           <div class="flex justify-between items-center mb-8">
             <span class="text-5xl flex items-center">
@@ -86,6 +83,7 @@ import VideoTab from "./gameDetail/VideoTab.vue";
 import GuideTab from "./gameDetail/GuideTab.vue";
 import AboutTab from "./gameDetail/AboutTab.vue";
 import GameDataService from "@/services/GameService";
+import config from "../constants/config";
 
 export default {
   name: "GameDetailPage",
@@ -100,6 +98,9 @@ export default {
     AboutTab
   },
   methods: {
+    baseURL(url) {
+      return config.baseURL + url;
+    },
     getGenreIcon: genre => {
       switch (genre.type) {
         case "fitness":
@@ -119,7 +120,7 @@ export default {
   },
   mounted() {
     GameDataService.get(this.$route.params.id).then(
-      response => this.game = response.data
+      response => (this.game = response.data)
     );
   }
 };

@@ -1,7 +1,7 @@
 <template>
-  <router-link :to="'/games/detail/' + '60540dfb1664323e1c56a1a1'">
+  <router-link :to="'/games/detail/' + ID">
     <div class="flex flex-col w-250 xl:w-350 pr-8 pb-4">
-      <img class="w-full" :src="require('@/assets/' + image)" />
+      <img class="w-full" :src="baseURL +  image" />
       <div class="flex justify-between">
         <div class="flex items-center">
           <span class="text-xl xl:text-2xl mr-2">{{ title }}</span>
@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import GameDataService from "../../services/GameService";
+import config from "../../constants/config";
 export default {
   name: "GameCard",
   props: {
@@ -25,6 +27,12 @@ export default {
     genre: Object,
     playtime: Number,
     ID: String
+  },
+  data: () => ({
+    baseURL: ""
+  }),
+  mounted() {
+    this.baseURL = config.baseURL;
   },
   methods: {
     getGenreIcon: genre => {

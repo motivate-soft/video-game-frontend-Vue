@@ -2,22 +2,28 @@
   <div class="flex flex-col">
     <div :class="'w-full flex items-start mb-3 justify-start overflow-x-auto'">
       <div v-for="video in game.videos" :key="video" class="relative mx-6 cursor-pointer" @click="currentVideo=video">
-        <video :src="require('@/assets/' + video)" class="h-40"/>
+        <video :src="baseURL(video)" class="h-40"/>
         <div :class="'absolute flex justify-center items-center min-w-full min-h-full top-0 ' + (video!=currentVideo? ' bg-semitransparent': 'border border-white')">
           <img class="w-8" :src="require('@/assets/images/play.png')"/>
         </div>
       </div>
     </div>
-    <video v-if="currentVideo" :src="require('@/assets/' + currentVideo)" controls="true" class="w-full mt-10"/>
+    <video v-if="currentVideo" :src="baseURL(currentVideo)" controls="true" class="w-full mt-10"/>
   </div>
 </template>
 
 <script>
+import config from "../../constants/config"
 export default {
   name: "VideoTab",
   props: {
     game: Object,
-    currentVideo: null
+    currentVideo: null,
+  },
+  methods: {
+    baseURL(url) {
+      return config.baseURL + url;
+    }
   },
   mounted() {
     console.log(this.game.videos);

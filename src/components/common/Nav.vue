@@ -1,7 +1,7 @@
 <template>
   <div class="w-full flex justify-center">
     <nav
-      class="w-full flex items-center justify-between flex-wrap p-2 px-6 max-w-1600"
+      class="w-full flex items-center justify-between flex-wrap p-2 max-w-1600"
     >
       <div class="flex items-center flex-shrink-0 text-white">
           <router-link to="/games" class="font-semibold text-3xl xl:text-40 tracking-tight">iPUPPET</router-link>

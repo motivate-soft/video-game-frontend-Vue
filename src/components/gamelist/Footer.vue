@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex-col text-white text-left px-6 m-auto" :style="'max-width: 1600px'">
+  <div class="w-full flex-col text-white text-left m-auto" :style="'max-width: 1600px'">
     <div class="my-8">
       <span class="font-semibold text-4xl xl:text-6xl tracking-tight">iPUPPET</span>
     </div>

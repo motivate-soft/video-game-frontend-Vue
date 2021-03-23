@@ -1,6 +1,6 @@
 <template>
-  <div class="sticky px-3" :style="'top:90px;'">
-    <div v-if="collapse" class="flex flex-col items-end mr-2 pb-10">
+  <div class="sticky w-full" :style="'top:90px;'">
+    <div v-if="collapse" class="flex flex-col w-full pr-2 items-end mr-2 pb-10">
       <img
         :src="require('@/assets/images/menu.png')"
         class="w-8 cursor-pointer"
@@ -16,7 +16,7 @@
       />
       
     </div>
-    <div v-if="!collapse" class="flex flex-col items-end shadow-2xl mr-2 pb-10">
+    <div v-if="!collapse" class="flex flex-col w-full pr-2 items-end shadow-2xl mr-2 pb-10">
       <img
         :src="require('@/assets/images/menu.png')"
         class="w-8 cursor-pointer"
@@ -28,14 +28,14 @@
         class="w-full flex flex-col items-center"
       >
         <div
-          class="w-full flex justify-between items-center p-3 px-6 border-b cursor-pointer border-gray-800"
+          class="w-full flex justify-between items-center p-2 pl-6 border-b cursor-pointer border-gray-800"
           @click="filterByCategory(category.category)"
         >
           <img :src="category.icon" class="w-5 mr-1" />
           <span class="text-xl" :style="'color:' + categoryColor(category)">健身</span>
         </div>
         <span
-          class="m-2 px-6 text-xl cursor-pointer w-full"
+          class="m-2 pl-8 text-xl cursor-pointer w-full"
           v-for="genre in category.genres"
           :style="getStyle(genre, category)"
           :key="genre._id"

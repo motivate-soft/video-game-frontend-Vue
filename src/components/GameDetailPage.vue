@@ -5,7 +5,7 @@
         <img :src="baseURL(game.image)" class="w-460 object-scale-down h-auto pr-5 lg:pr-8" />
         <div class="flex flex-col flex-grow">
           <div class="flex justify-between items-center mb-8">
-            <span class="text-5xl flex items-center">
+            <span class="text-4xl flex items-center">
               {{ game.title}}
               <img :src="getGenreIcon(game.genre)" class="ml-8 w-6 h-6" />
             </span>
@@ -41,8 +41,8 @@
               {{ game.playtime }}
             </span>
           </div>
-          <span class="text-2xl py-5">详情</span>
-          <p class="text-xl leading-10" v-html="game.description"></p>
+          <span class="text-xl py-5">详情</span>
+          <p class="text-lg leading-10" v-html="game.description"></p>
         </div>
       </div>
       <div id="tabs">

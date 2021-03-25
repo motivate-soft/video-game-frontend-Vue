@@ -10,7 +10,7 @@
           :collapse="true"
         />
       </div>
-      <div v-if="!isFiltered" class="py-12 min-w-0 max-w-1600">
+      <div v-if="!isFiltered" class="py-12 min-w-0 max-w-1600 mr-40 xl:mr-0">
         <img :src="require('@/assets/images/example/1.png')" class="w-full pb-12" />
         <game-sublist :subtitle="'评分优先'" :items="topGames" />
         <game-sublist :subtitle="'新款崛起'" :items="newGames" />
@@ -62,17 +62,18 @@ export default {
           this.games = response.data;
           this.topGames = response.data.sort((a, b) => {
             if (a.likes > b.likes) return -1;
-            else return 1;
-          });
+            else if(a.likes < b.likes) return 1;
+            else return 0;
+          }).slice(0, 6);
           this.newGames = response.data.sort((a, b) => {
             if (a.releaseDate > b.releaseDate) return -1;
             else return 1;
-          });
+          }).slice(0, 6);
           this.hotGames = response.data.sort((a, b) => {
             if (a.loves > b.loves) return -1;
             else return 1;
-          });
-          console.log(response.data);
+          }).slice(0, 6);
+          console.log(this.topGames);
         })
         .catch(e => {
           console.log(e);

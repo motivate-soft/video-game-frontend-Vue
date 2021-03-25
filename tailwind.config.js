@@ -14,6 +14,7 @@ module.exports = {
       },
       width: {
         '350': 350,
+        '450': 450,
         '250': 250,
       },
       maxWidth: {
@@ -23,6 +24,8 @@ module.exports = {
       height: {
         'logomobile': 50,
         'logosmd': 84,
+        '120': 120,
+        '175': 175
       },
       padding: {
       },

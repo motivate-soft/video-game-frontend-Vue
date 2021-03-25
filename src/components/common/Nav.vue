@@ -4,12 +4,14 @@
       class="w-full flex items-center justify-between flex-wrap p-2 px-4 max-w-1600"
     >
       <div class="flex items-center flex-shrink-0 text-white">
-          <router-link to="/games" class="font-semibold text-3xl xl:text-40 tracking-tight">iPUPPET</router-link>
-          <a href="#" class="hidden h-full lg:flex items-center ml-8 xl:ml-16 text-xl xl:text-2xl">
-            <img :src="require('@/assets/images/nav/home.png')" class="pr-2 h-6 xl:h-8"/> 主页
+          <router-link to="/games" class="font-semibold text-3xl xl:text-40 tracking-tight mr-4">iPUPPET</router-link>
+          <a href="#" class="h-full items-center mx-2 xl:mx-8 text-xl xl:text-2xl flex">
+            <img :src="require('@/assets/images/nav/home.png')" class="px-2 h-6 xl:h-8"/>
+            <span class="hidden lg:flex">主页</span>
           </a>
-          <router-link to="/games" class="hidden h-full lg:flex items-center ml-5 xl:ml-10 text-xl xl:text-2xl relative">
-            <img :src="require('@/assets/images/nav/grid.png')" class="pr-2 h-6 xl:h-8"/> 软件
+          <router-link to="/games" class="h-full items-center mx-2 xl:mx-8 text-xl xl:text-2xl relative flex">
+            <img :src="require('@/assets/images/nav/grid.png')" class="px-2 h-6 xl:h-8"/> 
+            <span class="hidden lg:flex">软件</span>
             <div class="absolute min-w-full h-1 rounded-full" style="background-color: #84E4A3; bottom:-20px"/>
           </router-link>
       </div>

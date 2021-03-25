@@ -2,7 +2,7 @@
   <div id="app" class="min-h-screen bg-back px-2 pt-16 xl:pt-20 z-0">
     <div v-if="game" class="mt-12 max-w-1600 m-auto">
       <div class="flex items-start w-full mb-16">
-        <img :src="baseURL(game.image)" class="w-460 object-scale-down h-auto pr-5 lg:pr-8" />
+        <img :src="baseURL(game.image[0])" class="w-450 object-scale-down h-auto pr-5 lg:pr-8" />
         <div class="flex flex-col flex-grow">
           <div class="flex justify-between items-center mb-8">
             <span class="text-4xl flex items-center">
@@ -38,7 +38,7 @@
               class="text-lg text-black bg-white rounded-full py-1 px-4 flex justify-center items-center"
             >
               <img :src="require('@/assets/images/eye.png')" class="h-4 mr-2" />
-              {{ game.playtime }}
+              {{ game.downloads }}
             </span>
           </div>
           <span class="text-xl py-5">详情</span>
@@ -110,11 +110,11 @@ export default {
     },
     getTypeIcon: category => {
       switch (category) {
-        case "fitness":
+        case "Fitness":
           return require("@/assets/images/fitness.png");
-        case "game":
+        case "Game":
           return require("@/assets/images/game.png");
-        case "social":
+        case "Social":
           return require("@/assets/images/social.png");
       }
     },

@@ -65,22 +65,22 @@ export default {
       let genres = respose.data;
       this.categories = [
         {
-          category: "fitness",
+          category: "Fitness",
           icon: require("@/assets/images/fitness.png"),
           color: "#F4AC30",
-          genres: genres.filter(item => item.type == "fitness")
+          genres: genres.filter(item => item.type == "Fitness")
         },
         {
-          category: "game",
+          category: "Game",
           icon: require("@/assets/images/game.png"),
           color: "#9C8BE6",
-          genres: genres.filter(item => item.type == "game")
+          genres: genres.filter(item => item.type == "Game")
         },
         {
-          category: "social",
+          category: "Social",
           icon: require("@/assets/images/social.png"),
           color: "#9AEAB6",
-          genres: genres.filter(item => item.type == "social")
+          genres: genres.filter(item => item.type == "Social")
         }
       ];
       console.log('categories', genres);

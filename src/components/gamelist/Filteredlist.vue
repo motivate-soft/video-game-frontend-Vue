@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full flex-col text-white text-left px-6 m-auto">
-    <div class="flex flex-wrap justify-between items-start pb-3">
+  <div class="w-full flex-col text-white text-left px-6 mx-auto">
+    <div class="flex flex-wrap justify-start items-start pb-3">
       <Game-Card v-for="(item, index) in items" 
         :key="index" 
         :game="item"

@@ -16,26 +16,26 @@
           <div class="flex justify-between pb-6 border-b border-gray-600">
             <div class="flex">
               <span
-                class="text-xl text-black bg-white rounded-full py-1 px-4 mr-6 flex justify-center items-center"
+                class="text-lg text-black bg-white rounded-full py-1 px-4 mr-6 flex justify-center items-center"
               >
                 <img :src="require('@/assets/images/heart.png')" class="h-4 mr-2" />
                 {{ game.loves}}
               </span>
               <span
-                class="text-xl text-black bg-white rounded-full py-1 px-4 mr-6 flex justify-center items-center"
+                class="text-lg text-black bg-white rounded-full py-1 px-4 mr-6 flex justify-center items-center"
               >
                 <img :src="require('@/assets/images/thumb-up.png')" class="h-4 mr-2" />
                 {{ game.likes}}
               </span>
               <span
-                class="text-xl text-black bg-white rounded-full py-1 px-4 flex justify-center items-center"
+                class="text-lg text-black bg-white rounded-full py-1 px-4 flex justify-center items-center"
               >
                 <img :src="require('@/assets/images/thumb-down.png')" class="h-4 mr-2" />
                 {{ game.dislikes}}
               </span>
             </div>
             <span
-              class="text-xl text-black bg-white rounded-full py-1 px-4 flex justify-center items-center"
+              class="text-lg text-black bg-white rounded-full py-1 px-4 flex justify-center items-center"
             >
               <img :src="require('@/assets/images/eye.png')" class="h-4 mr-2" />
               {{ game.playtime }}

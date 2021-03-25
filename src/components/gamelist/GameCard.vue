@@ -4,12 +4,12 @@
       <img class="w-full" :src="baseURL +  image" />
       <div class="flex justify-between">
         <div class="flex items-center">
-          <span class="text-xl xl:text-2xl mr-2">{{ title }}</span>
+          <span class="text-xl xl:text-2xl mr-4">{{ title }}</span>
           <img class="w-4 h-4" :src="getGenreIcon(genre)" />
         </div>
         <div class="flex items-center">
           <img class="h-4 mr-2" :src="require('@/assets/images/eye-white.png')" />
-          <span class="text-sm">{{ playtime}}</span>
+          <span class="text-lg">{{ playtime}}</span>
         </div>
       </div>
     </div>

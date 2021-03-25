@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="w-full flex text-white text-left pr-6 m-auto" :style="'max-width: 1920px'">
+    <div class="w-full flex text-white text-left px-4 m-auto" :style="'max-width: 1920px'">
       <div class="flex-shrink-0 relative w-40 mt-12">
         <sort-pan
           @filterByGenre="filterByGenre"

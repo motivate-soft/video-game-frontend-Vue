@@ -1,7 +1,7 @@
 <template>
   <div class="w-full flex justify-center">
     <nav
-      class="w-full flex items-center justify-between flex-wrap p-2 max-w-1600"
+      class="w-full flex items-center justify-between flex-wrap p-2 px-4 max-w-1600"
     >
       <div class="flex items-center flex-shrink-0 text-white">
           <router-link to="/games" class="font-semibold text-3xl xl:text-40 tracking-tight">iPUPPET</router-link>
@@ -14,7 +14,7 @@
           </router-link>
       </div>
       <div class="relative">
-          <input class="rounded-full w-64 p-2 pl-10 text-black" :style="'border-width: 0; outline-width: 0'"/>
+          <input class="rounded-full w-56 p-2 pl-10 text-black" :style="'border-width: 0; outline-width: 0'"/>
           <div class="absolute flex items-center h-full" :style="'left:0; top:0'">
             <img :src="require('@/assets/images/nav/search.png')" class="p-2"/>
           </div>

@@ -6,6 +6,8 @@
           @filterByGenre="filterByGenre"
           @filterByCategory="filterByCategory"
           :selected="selected"
+          :genres="genres"
+          :collapse="true"
         />
       </div>
       <div v-if="!isFiltered" class="py-12 min-w-0 max-w-1600">
@@ -109,16 +111,19 @@ export default {
     selected: {
       deep: true,
       handler() {
-        // console.log(this.selected);
+        console.log(this.selected);
         if (
           this.selected.genre.length > 0 ||
           this.selected.category.length > 0
         ) {
           this.isFiltered = true;
           this.filteredGames = this.games.filter(
-            item =>
-              this.selected.genre.includes(item.genre._id) ||
-              this.selected.category.includes(item.genre.type)
+            item => {
+              for(let genre of item.genre) {
+                if(this.selected.genre.includes(genre._id) || this.selected.category.includes(genre.type)) return true;
+              }
+              return false;
+            }
           );
           console.log("filtered", this.filteredGames);
         } else {

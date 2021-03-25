@@ -1,15 +1,15 @@
 <template>
-  <router-link :to="'/games/detail/' + ID">
+  <router-link :to="'/games/detail/' + game._id">
     <div class="flex flex-col w-250 xl:w-350 pr-8 pb-4">
-      <img class="w-full" :src="baseURL +  image" />
+      <img class="w-full" :src="baseURL +  game.image" />
       <div class="flex justify-between">
         <div class="flex items-center">
-          <span class="text-xl xl:text-2xl mr-4">{{ title }}</span>
-          <img class="w-4 h-4" :src="getGenreIcon(genre)" />
+          <span class="text-xl xl:text-2xl mr-4">{{ game.title }}</span>
+          <img v-for="(item, index) in getGenreType(game.genre)" :key="index" class="w-4 h-4 mt-2 mr-2" :src="getTypeIcon(item)" />
         </div>
         <div class="flex items-center">
           <img class="h-4 mr-2" :src="require('@/assets/images/eye-white.png')" />
-          <span class="text-lg">{{ playtime}}</span>
+          <span class="text-lg">{{ game.playtime}}</span>
         </div>
       </div>
     </div>
@@ -17,16 +17,11 @@
 </template>
 
 <script>
-import GameDataService from "../../services/GameService";
 import config from "../../constants/config";
 export default {
   name: "GameCard",
   props: {
-    title: String,
-    image: String,
-    genre: Object,
-    playtime: Number,
-    ID: String
+    game: Object
   },
   data: () => ({
     baseURL: ""
@@ -35,8 +30,15 @@ export default {
     this.baseURL = config.baseURL;
   },
   methods: {
-    getGenreIcon: genre => {
-      switch (genre.type) {
+    getGenreType: genre => {
+      let categories = [];
+      for(let item of genre){
+        if(!categories.find(category => category==item.type)) categories.push(item.type);
+      }
+      return categories.sort( (a, b) => a > b);
+    },
+    getTypeIcon: category => {
+      switch (category) {
         case "fitness":
           return require("@/assets/images/fitness.png");
         case "game":

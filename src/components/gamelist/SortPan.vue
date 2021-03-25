@@ -47,36 +47,45 @@
 </template>
 
 <script>
-import genres from "../../constants/genres.json";
+// import genres from "../../constants/genres.json";
+import GenreDataService from "../../services/GenreService"
 
 export default {
   name: "SortPan",
   props: {
-    selected: Object
+    selected: Object,
+    // genres: Array
   },
   data: () => ({
     collapse: true,
-    categories: [
-      {
-        category: "fitness",
-        icon: require("@/assets/images/fitness.png"),
-        color: "#F4AC30",
-        genres: genres.filter(item => item.type == "fitness")
-      },
-      {
-        category: "game",
-        icon: require("@/assets/images/game.png"),
-        color: "#9C8BE6",
-        genres: genres.filter(item => item.type == "game")
-      },
-      {
-        category: "social",
-        icon: require("@/assets/images/social.png"),
-        color: "#9AEAB6",
-        genres: genres.filter(item => item.type == "social")
-      }
-    ]
+    categories: [],
   }),
+  mounted() {
+    GenreDataService.getAll().then( respose => {
+      let genres = respose.data;
+      this.categories = [
+        {
+          category: "fitness",
+          icon: require("@/assets/images/fitness.png"),
+          color: "#F4AC30",
+          genres: genres.filter(item => item.type == "fitness")
+        },
+        {
+          category: "game",
+          icon: require("@/assets/images/game.png"),
+          color: "#9C8BE6",
+          genres: genres.filter(item => item.type == "game")
+        },
+        {
+          category: "social",
+          icon: require("@/assets/images/social.png"),
+          color: "#9AEAB6",
+          genres: genres.filter(item => item.type == "social")
+        }
+      ];
+      console.log('categories', genres);
+    });
+  },
   methods: {
     filter(genre) {
       this.$emit("filterByGenre", genre);

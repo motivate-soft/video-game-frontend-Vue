@@ -6,8 +6,8 @@
         <div class="flex flex-col flex-grow">
           <div class="flex justify-between items-center mb-8">
             <span class="text-4xl flex items-center">
-              {{ game.title}}
-              <img :src="getGenreIcon(game.genre)" class="ml-8 w-6 h-6" />
+              <span class="mr-8">{{game.title}}</span>
+              <img v-for="(item, index) in getGenreType(game.genre)" :key="index" class="w-6 h-6 mt-2 mr-2" :src="getTypeIcon(item)" />
             </span>
             <a :href="game.source" class="mr-6">
               <img :src="require('@/assets/images/download.png')" class="w-8 lg:w-10" />
@@ -101,8 +101,15 @@ export default {
     baseURL(url) {
       return config.baseURL + url;
     },
-    getGenreIcon: genre => {
-      switch (genre.type) {
+    getGenreType: genre => {
+      let categories = [];
+      for(let item of genre){
+        if(!categories.find(category => category==item.type)) categories.push(item.type);
+      }
+      return categories.sort( (a, b) => a > b);
+    },
+    getTypeIcon: category => {
+      switch (category) {
         case "fitness":
           return require("@/assets/images/fitness.png");
         case "game":
@@ -122,6 +129,7 @@ export default {
     GameDataService.get(this.$route.params.id).then(
       response => (this.game = response.data)
     );
+    
   }
 };
 </script>

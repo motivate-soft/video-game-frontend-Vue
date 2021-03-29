@@ -41,8 +41,9 @@
               {{ game.downloads }}
             </span>
           </div>
-          <span class="text-xl py-5">详情</span>
-          <p class="text-lg leading-10" v-html="game.description"></p>
+          <span class="text-xl py-5">Details</span>
+          <!-- <span class="text-xl py-5">详情</span> -->
+          <p class="text-lg leading-10" v-html="game.details"></p>
         </div>
       </div>
       <div id="tabs">
@@ -50,15 +51,18 @@
           <a
             @click="activetab=1"
             :class="'text-2xl px-12 py-3 border-b-4 border-r cursor-pointer border-black bg-' + (activetab==1? 'dark': 'light')"
-          >视频</a>
+          >VIDEO</a>
+          <!-- >视频</a> -->
           <a
             @click="activetab=2"
             :class="'text-2xl px-12 py-3 border-b-4 border-r cursor-pointer border-black bg-' + (activetab==2? 'dark': 'light')"
-          >控制</a>
+          >CONTROL</a>
+          <!-- >控制</a> -->
           <a
             @click="activetab=3"
             :class="'text-2xl px-12 py-3 border-b-4 border-r cursor-pointer border-black bg-' + (activetab==3? 'dark': 'light')"
-          >关于</a>
+          >ABOUT</a>
+          <!-- >关于</a> -->
         </div>
 
         <div class="content">

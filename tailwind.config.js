@@ -21,6 +21,10 @@ module.exports = {
         '1600':1600,
         '460': 460
       },
+      maxHeight: {
+        '500': 500,
+        '700': 700
+      },
       height: {
         'logomobile': 50,
         'logosmd': 84,

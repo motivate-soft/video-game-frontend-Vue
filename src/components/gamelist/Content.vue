@@ -11,10 +11,15 @@
         />
       </div>
       <div v-if="!isFiltered" class="py-12 min-w-0 max-w-1600 mr-40 xl:mr-0">
-        <img :src="require('@/assets/images/example/1.png')" class="w-full pb-12" />
-        <game-sublist :subtitle="'评分优先'" :items="topGames" />
+        <carousel :per-page="1" :paginationPosition="'bottom-overlay'" :mouse-drag="true" paginationActiveColor="Chartreuse" class="w-full mb-12">
+          <slide v-for="(item, index) in sliders" :key="index"><img :src="baseURL(item)" class="w-full" /></slide>
+        </carousel>
+        <game-sublist subtitle="Scoring priority" :items="topGames" />
+        <game-sublist subtitle="The new rise sharply" :items="newGames" />
+        <game-sublist subtitle="Hot for friends" :items="hotGames" />
+        <!-- <game-sublist :subtitle="'评分优先'" :items="topGames" />
         <game-sublist :subtitle="'新款崛起'" :items="newGames" />
-        <game-sublist :subtitle="'好友热玩'" :items="hotGames" />
+        <game-sublist :subtitle="'好友热玩'" :items="hotGames" /> -->
       </div>
       <div v-if="isFiltered" class="w-full flex flex-col items-end py-12 max-w-1600">
         <game-filteredlist :items="filteredGames" />
@@ -25,11 +30,14 @@
 </template>
 
 <script>
-import GameSublist from "../gamelist/Sublist.vue";
-import GameFilteredlist from "../gamelist/Filteredlist.vue";
+import { Carousel, Slide } from "vue-carousel";
+import config from "../../constants/config"
+
+import GameSublist from "../gamelist/Sublist";
+import GameFilteredlist from "../gamelist/Filteredlist";
 import GameDataService from "../../services/GameService";
 import GenreDataService from "../../services/GenreService";
-import SortPan from "../gamelist/SortPan.vue";
+import SortPan from "../gamelist/SortPan";
 
 // var categories = ['fitness', 'game', 'social'];
 export default {
@@ -37,7 +45,9 @@ export default {
   components: {
     GameSublist,
     GameFilteredlist,
-    SortPan
+    SortPan,
+    Carousel,
+    Slide
   },
   data: () => ({
     isFiltered: false,
@@ -50,7 +60,8 @@ export default {
     filteredGames: [],
     topGames: null,
     newGames: null,
-    hotGames: null
+    hotGames: null,
+    sliders: ['sliders/1.png', 'sliders/2.png', 'sliders/3.png', 'sliders/4.png'],
   }),
   mounted() {
     this.initialize();
@@ -106,6 +117,9 @@ export default {
       var index = this.selected.category.indexOf(category);
       if (index >= 0) this.selected.category.splice(index, 1);
       else this.selected.category.push(category);
+    },
+    baseURL(url) {
+      return config.baseURL + url;
     }
   },
   watch: {

@@ -7,11 +7,13 @@
           <router-link to="/games" class="font-semibold text-3xl xl:text-40 tracking-tight mr-4">iPUPPET</router-link>
           <a href="#" class="h-full items-center mx-2 xl:mx-8 text-xl xl:text-2xl flex">
             <img :src="require('@/assets/images/nav/home.png')" class="px-2 h-6 xl:h-8"/>
-            <span class="hidden lg:flex">主页</span>
+            <!-- <span class="hidden lg:flex">主页</span> -->
+            <span class="hidden lg:flex">HOME</span>
           </a>
           <router-link to="/games" class="h-full items-center mx-2 xl:mx-8 text-xl xl:text-2xl relative flex">
             <img :src="require('@/assets/images/nav/grid.png')" class="px-2 h-6 xl:h-8"/> 
-            <span class="hidden lg:flex">软件</span>
+            <!-- <span class="hidden lg:flex">软件</span> -->
+            <span class="hidden lg:flex">SOFTWARE</span>
             <div class="absolute min-w-full h-1 rounded-full" style="background-color: #84E4A3; bottom:-20px"/>
           </router-link>
       </div>

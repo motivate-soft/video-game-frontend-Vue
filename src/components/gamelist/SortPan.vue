@@ -32,7 +32,7 @@
           @click="filterByCategory(category.category)"
         >
           <img :src="category.icon" class="w-5 mr-1" />
-          <span class="text-xl" :style="'color:' + categoryColor(category)">健身</span>
+          <span class="text-xl" :style="'color:' + categoryColor(category)">{{category.category}}</span>
         </div>
         <span
           class="m-2 pl-8 text-xl cursor-pointer w-full"

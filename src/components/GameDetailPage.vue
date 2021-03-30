@@ -1,8 +1,8 @@
 <template>
-  <div id="app" class="min-h-screen bg-back px-2 pt-16 xl:pt-20 z-0">
-    <div v-if="game" class="mt-12 max-w-1600 m-auto">
+  <div id="app" class="min-h-screen bg-back px-2 pt-16 z-0">
+    <div v-if="game" class="mt-12 max-w-1440 px-40 m-auto">
       <div class="flex items-start w-full mb-16">
-        <img :src="baseURL(game.image[0])" class="w-300 xl:w-450 object-cover h-300 xl:h-450 mr-5 lg:mr-8 border border-gray-800" />
+        <img :src="baseURL(game.image[0])" class="w-300 xl:w-450 object-cover h-300 xl:h-450 mr-5 xl:mr-8 border border-gray-800" />
         <div class="flex flex-col flex-grow">
           <div class="flex justify-between items-center mb-8">
             <span class="text-4xl flex items-center">
@@ -10,7 +10,7 @@
               <img v-for="(item, index) in getGenreType(game.genre)" :key="index" class="w-6 h-6 mt-2 mr-2" :src="getTypeIcon(item)" />
             </span>
             <a :href="game.source" class="mr-6">
-              <img :src="require('@/assets/images/download.png')" class="w-8 lg:w-10" />
+              <img :src="require('@/assets/images/download.png')" class="w-8 xl:w-10" />
             </a>
           </div>
           <div class="flex justify-between pb-6 border-b border-gray-600">

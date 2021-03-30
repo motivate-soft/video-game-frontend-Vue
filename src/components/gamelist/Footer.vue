@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full flex-col text-white text-left m-auto px-4" :style="'max-width: 1600px'">
+  <div class="w-full flex-col text-white text-left px-40 m-auto max-w-1440">
     <div class="mt-8 flex" :style="'margin-left: -30px'">
-      <span class="font-semibold text-4xl xl:text-5xl tracking-tight pb-8 mb-2 pl-6 border-l-4 border-gray-400">iPUPPET</span>
+      <span class="font-semibold text-3xl xl:text-4xl tracking-tight pb-5 mb-2 pl-6 border-l-4 border-gray-400">iPUPPET</span>
     </div>
     <div class="w-full flex flex-wrap justify-between pb-16">
       <div class="flex flex-col justify-start w-1/2 lg:w-1/4 my-2">

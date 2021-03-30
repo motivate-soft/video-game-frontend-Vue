@@ -1,5 +1,5 @@
 <template>
-  <div class="sticky w-full" :style="'top:90px;'">
+  <div class="sticky w-full" :style="'top:70px;'">
     <div v-if="collapse" class="flex flex-col w-full pr-2 items-end mr-2 pb-10">
       <img
         :src="require('@/assets/images/menu.png')"
@@ -10,7 +10,7 @@
         v-for="category in categories"
         :key="category.category"
         :src="category.icon"
-        class="w-7 p-1 mr-1 my-2 cursor-pointer"
+        class="w-6 p-1 mr-1 my-2 cursor-pointer"
         :style="getBorderStyle(category)"
         @click="filterByCategory(category.category)"
       />

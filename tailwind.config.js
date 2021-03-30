@@ -5,7 +5,8 @@ module.exports = {
         'back': "#181818",
         'dark': "#121212",
         'light': "#262626",
-        'semitransparent': "#00000088"
+        'semitransparent': "#00000088",
+        'whitegray': "#F0EFEF"
       },
       fontSize: {
         'huge': "130px",
@@ -13,13 +14,17 @@ module.exports = {
         '50': "50px",
       },
       width: {
-        '300':300,
+        '300': 300,
         '350': 350,
         '450': 450,
         '250': 250,
       },
+      minWidth: {
+        "1280": 1280
+      },
       maxWidth: {
-        '1600':1600,
+        '1440': 1440,
+        '1120': 1120,
         '460': 460
       },
       maxHeight: {
@@ -31,8 +36,9 @@ module.exports = {
         'logosmd': 84,
         '120': 120,
         '175': 175,
-        '300':300,
-        '450': 450
+        '300': 300,
+        '450': 450,
+        '3px': 3
       },
       padding: {
       },

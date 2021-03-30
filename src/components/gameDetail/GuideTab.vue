@@ -28,7 +28,7 @@ export default {
       return config.baseURL + url;
     },
     getClassName(type) {
-      if(type=='image') return "float-left flex flex-col w-full lg:w-1/2 px-5";
+      if(type=='image') return "float-left flex flex-col w-full xl:w-1/2 px-5";
       else return "float-left flex flex-col w-full px-5";
     }
   }

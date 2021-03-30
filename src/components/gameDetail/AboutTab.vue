@@ -5,7 +5,7 @@
       <div
         v-for="(item, index) in game.about"
         :key="index"
-        class="float-left flex flex-col w-full lg:w-1/2 px-5"
+        class="float-left flex flex-col w-full xl:w-1/2 px-5"
       >
         <span class="text-xl py-5">{{ item.title }}</span>
         <p class="flex-grow text-md leading-10 pb-5" v-html="item.content"></p>
@@ -16,7 +16,7 @@
       <div
         v-for="(item, index) in game.reviews"
         :key="index"
-        class="float-left flex flex-col w-full lg:w-1/2 px-5"
+        class="float-left flex flex-col w-full xl:w-1/2 px-5"
       >
         <p class="flex-grow text-md leading-10 pb-5" v-html="item"></p>
       </div>

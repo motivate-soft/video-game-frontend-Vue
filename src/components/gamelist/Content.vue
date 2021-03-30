@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="w-full flex text-white text-left px-4 m-auto" :style="'max-width: 1920px'">
+    <div class="w-full flex text-white text-left m-auto" :style="'max-width: 1440px'">
       <div class="flex-shrink-0 relative w-40 mt-12">
         <sort-pan
           @filterByGenre="filterByGenre"
@@ -10,7 +10,7 @@
           :collapse="true"
         />
       </div>
-      <div v-if="!isFiltered" class="py-12 min-w-0 max-w-1600 mr-40 xl:mr-0">
+      <div v-if="!isFiltered" class="py-12 min-w-0 max-w-1120 mr-40">
         <carousel :per-page="1" :paginationPosition="'bottom-overlay'" :mouse-drag="true" paginationActiveColor="Chartreuse" class="w-full mb-12">
           <slide v-for="(item, index) in sliders" :key="index"><img :src="baseURL(item)" class="w-full" /></slide>
         </carousel>

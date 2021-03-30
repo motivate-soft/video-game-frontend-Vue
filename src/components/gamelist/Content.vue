@@ -21,9 +21,9 @@
         <game-sublist :subtitle="'新款崛起'" :items="newGames" />
         <game-sublist :subtitle="'好友热玩'" :items="hotGames" /> -->
       </div>
-      <div v-if="isFiltered" class="w-full flex flex-col items-end py-12 m-auto mr-40 max-w-1600">
+      <div v-if="isFiltered" class="w-full flex flex-col items-end py-12 mx-auto mr-40 max-w-1600">
         <game-filteredlist :items="filteredGames" />
-        <span class="text-lg xl:text-xl pt-4 cursor-pointer" @click="showAll">查看全部</span>
+        <span class="text-lg xl:text-xl pt-4 cursor-pointer" @click="showAll">view all</span>
       </div>
     </div>
   </div>

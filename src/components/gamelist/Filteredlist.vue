@@ -1,10 +1,9 @@
 <template>
-  <div class="w-full flex-col text-white text-left m-auto">
+  <div class="w-full flex-col text-white text-left mx-auto">
     <div class="flex flex-wrap justify-start items-start pb-3">
-      <Game-Card v-for="(item, index) in items" 
-        :key="index" 
-        :game="item"
-      />
+      <div class="w-1/4" v-for="(item, index) in items" :key="index">
+        <Game-Card :game="item" />
+      </div>
     </div>
   </div>
 </template>

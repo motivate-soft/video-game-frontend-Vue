@@ -1,5 +1,5 @@
 <template>
-  <div class="gamelist-content text-center min-h-screen pt-16 z-0">
+  <div class="gamelist-content text-center min-h-screen pt-60 xl:pt-16 z-0">
     <Gamelist-Content class="w-full bg-back" />
     <Gamelist-Footer />
   </div>

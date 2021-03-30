@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center w-250 h-170 xl:w-350 pr-8 pb-10">
+  <div class="flex flex-col items-center w-250 h-170 xl:w-320 pr-8 pb-10">
     <router-link :to="'/games/detail/' + game._id">
       <img
         class="h-120 xl:h-175 object-scale-down border border-gray-800"

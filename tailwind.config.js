@@ -15,7 +15,7 @@ module.exports = {
       },
       width: {
         '300': 300,
-        '350': 350,
+        '320': 320,
         '450': 450,
         '250': 250,
       },
@@ -23,8 +23,8 @@ module.exports = {
         "1280": 1280
       },
       maxWidth: {
-        '1440': 1440,
-        '1120': 1120,
+        '1600': 1600,
+        '1120': 1280,
         '460': 460
       },
       maxHeight: {
@@ -40,7 +40,12 @@ module.exports = {
         '450': 450,
         '3px': 3
       },
+      inset: {
+        '-18': "-18px",
+        '-19': "-19px"
+      },
       padding: {
+        '60': '60px'
       },
       margin: {
       },
@@ -50,6 +55,8 @@ module.exports = {
       fontFamily: {
       },
       screens: {
+        'lg': '1280px',
+        'xl': '1600px',
       },
       opacity: {
       }

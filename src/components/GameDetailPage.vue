@@ -1,6 +1,6 @@
 <template>
-  <div id="app" class="min-h-screen bg-back px-2 pt-16 z-0">
-    <div v-if="game" class="mt-12 max-w-1440 px-40 m-auto">
+  <div id="app" class="min-h-screen bg-back px-2 pt-60 xl:pt-16 z-0">
+    <div v-if="game" class="mt-12 max-w-1600 px-40 m-auto">
       <div class="flex items-start w-full mb-16">
         <img :src="baseURL(game.image[0])" class="w-300 xl:w-450 object-cover h-300 xl:h-450 mr-5 xl:mr-8 border border-gray-800" />
         <div class="flex flex-col flex-grow">

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="w-full flex text-white text-left m-auto" :style="'max-width: 1440px'">
+    <div class="w-full flex text-white text-left m-auto max-w-1600">
       <div class="flex-shrink-0 relative w-40 mt-12">
         <sort-pan
           @filterByGenre="filterByGenre"
@@ -10,8 +10,8 @@
           :collapse="true"
         />
       </div>
-      <div v-if="!isFiltered" class="py-12 min-w-0 max-w-1120 mr-40">
-        <carousel :per-page="1" :paginationPosition="'bottom-overlay'" :mouse-drag="true" paginationActiveColor="Chartreuse" class="w-full mb-12">
+      <div v-if="!isFiltered" class="my-12 min-w-0 max-w-1120 mr-40">
+        <carousel :per-page="1" :autoplay="true" :autoplayTimeout="5000" :paginationPosition="'bottom-overlay'" :mouse-drag="true" paginationActiveColor="Chartreuse" class="w-full mb-12">
           <slide v-for="(item, index) in sliders" :key="index"><img :src="baseURL(item)" class="w-full" /></slide>
         </carousel>
         <game-sublist subtitle="Scoring priority" :items="topGames" />
@@ -21,7 +21,7 @@
         <game-sublist :subtitle="'新款崛起'" :items="newGames" />
         <game-sublist :subtitle="'好友热玩'" :items="hotGames" /> -->
       </div>
-      <div v-if="isFiltered" class="w-full flex flex-col items-end py-12 max-w-1600">
+      <div v-if="isFiltered" class="w-full flex flex-col items-end py-12 m-auto mr-40 max-w-1600">
         <game-filteredlist :items="filteredGames" />
         <span class="text-lg xl:text-xl pt-4 cursor-pointer" @click="showAll">查看全部</span>
       </div>

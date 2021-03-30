@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex-col text-white text-left px-40 m-auto max-w-1440">
+  <div class="w-full flex-col text-white text-left px-40 m-auto max-w-1600">
     <div class="mt-8 flex" :style="'margin-left: -30px'">
       <span class="font-semibold text-3xl xl:text-4xl tracking-tight pb-5 mb-2 pl-6 border-l-4 border-gray-400">iPUPPET</span>
     </div>

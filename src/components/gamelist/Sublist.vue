@@ -20,7 +20,7 @@
     </div>-->
     <div class="w-full flex flex-wrap items-start mb-3 justify-start">
       <!-- <carousel :per-page="3" :paginationPosition="'bottom-overlay'" :mouse-drag="true" class="w-full"> -->
-      <carousel :v-if="overflow" :per-page="4" :paginationEnabled="false" :mouse-drag="true" class="w-full">
+      <carousel :v-if="overflow" :per-page="4" :paginationEnabled="false" :navigationNextLabel="'next'" :mouse-drag="true" class="w-full">
         <slide v-for="(item, index) in items" :key="index"><Game-Card  :game="item"/></slide>
       </carousel>
       <!-- <Game-Card :v-if="!overflow" v-for="(item, index) in items" :key="index" :game="item" /> -->

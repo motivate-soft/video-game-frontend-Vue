@@ -9,7 +9,7 @@
               <span class="mr-8">{{game.title}}</span>
               <img v-for="(item, index) in getGenreType(game.genre)" :key="index" class="w-6 h-6 mt-2 mr-2" :src="getTypeIcon(item)" />
             </span>
-            <a :href="game.source" class="mr-6">
+            <a :href="baseURL(game.source.link)" class="mr-6">
               <img :src="require('@/assets/images/download.png')" class="w-8 xl:w-10" />
             </a>
           </div>
@@ -132,7 +132,9 @@ export default {
   mounted() {
     GameDataService.get(this.$route.params.id).then(
       response => (this.game = response.data)
-    );
+    ).then( () => {
+    console.log('game', this.game)
+    });
     
   }
 };
